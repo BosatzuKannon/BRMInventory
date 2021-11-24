@@ -6,12 +6,12 @@ const Utils = require('../commons/utils')
 module.exports = {
     async saveSale(req,res){
         try{
-            if(!req.body.sale.idUser || !req.body.sale.amount || !req.body.sale.products)
+            if(!req.body.sale.id_user || !req.body.sale.amount || !req.body.sale.products)
                 res.status(406).send({'Error': 'Información incompleta'})
 
             const saleModel = await Utils.getModel('public',Sale)
             const saleData = {
-                idUser: req.body.sale.idUser,
+                id_user: req.body.sale.id_user,
                 amount: req.body.sale.amount,
                 observation: req.body.sale.observation
             }
@@ -47,7 +47,7 @@ async function saveSaleDetail(products, idSale){
         const saleDetailModel = await Utils.getModel('public',SaleDetail)
         let data = {}
         for (product in products) {        
-            products[product].idSale = idSale                  
+            products[product].id_sale = idSale                  
             data = products[product]
             await Utils.insert_data(data, saleDetailModel, 'id');
         }

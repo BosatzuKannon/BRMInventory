@@ -9,12 +9,12 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       autoIncrementIdentity: true
     },
-    idSale: {
+    id_sale: {
       allowNull: false,
-      type: DataTypes.INTEGER
+      type: DataTypes.BIGINT
     },
-    idProduct: {
-      type: DataTypes.INTEGER,
+    id_product: {
+      type: DataTypes.BIGINT,
       allowNull: true
     },
     quantity: {

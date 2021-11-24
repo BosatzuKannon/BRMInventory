@@ -1,5 +1,4 @@
 const User = require('../../../models/users').users;
-
 const Utils = require('../utils');
 const passport = require('passport')
 const localStrategy = require('passport-local').Strategy
@@ -13,9 +12,8 @@ passport.use('login', new localStrategy({
 }, async (doc, password, done) => {
   
   let userModel = await Utils.getModel('public', User);
-  //const ProfileModel = await Utils.getModel('public', Profile)
   const user = await userModel.findOne({
-    where: { id: doc }    
+    where: { doc: doc }    
   })
   const userInfo = user ? user.get({ plain: true }): null
   

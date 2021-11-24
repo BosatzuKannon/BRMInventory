@@ -9,9 +9,9 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       autoIncrementIdentity: true
     },
-    idUser: {
+    id_user: {
       allowNull: false,
-      type: DataTypes.INTEGER
+      type: DataTypes.BIGINT
     },
     amount: {
       type: DataTypes.DOUBLE,

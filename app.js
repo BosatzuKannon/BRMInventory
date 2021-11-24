@@ -21,8 +21,8 @@ require('./src/controllers/commons/auth/auth')
 
 app.all(['/','/ping','/Control','/index'], (req, res) => {
     res.status(200).json({
-      name: 'N-Control',
-      provider: 'cobrando.com.co',
+      name: 'BMRInventory',
+      provider: 'brm.com.co',
       version: 'v1'
     })
 })
